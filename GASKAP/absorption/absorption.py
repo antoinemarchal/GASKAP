@@ -23,10 +23,10 @@ class lbfgs_abs(object):
         self.rms_tau = rms_tau if rms_tau is not None else 1.
         self.hdr = hdr if hdr is not None else None
         if self.hdr is not None : self.v = self.mean2vel(self.hdr["CRVAL3"]*1.e-3, self.hdr["CDELT3"]*1.e-3, 
-                                                         self.hdr["CRPIX3"], np.arange(self.cube.shape[0]))
+                                                         self.hdr["CRPIX3"], np.arange(len(self.tau)))
 
     def run(self, n_gauss=18, lb_amp=0, ub_amp=100, lb_mu=1, ub_mu=500, lb_sig=1, ub_sig=100, lambda_Tb=1, 
-            lambda_tau=1, lambda_mu=100, lambda_sig=100, iprint_init=1, amp_fact_init=0.66, sig_init=2., 
+            lambda_tau=1, lambda_mu=100, lambda_sig=100, iprint_init=1, amp_fact_init=0.666, sig_init=2., 
             maxiter=15000, maxiter_init=15000, iprint=1):
 
         #Flag test basic properties
