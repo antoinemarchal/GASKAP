@@ -70,9 +70,9 @@ class lbfgs_abs(object):
                                                                    lambda_mu, lambda_sig), 
                                         bounds=bounds, approx_grad=False, disp=iprint, maxiter=maxiter)
         
-        params = np.reshape(result[0], (3*n_gauss, cube.shape[1]))   
+        # params = np.reshape(result[0], (3*n_gauss, cube.shape[1]))   
 
-        return params
+        return result
 
 
     def mean2vel(self, CRVAL, CDELT, CRPIX, mean):                                                                            
