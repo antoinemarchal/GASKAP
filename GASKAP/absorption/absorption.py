@@ -4,7 +4,7 @@ import sys
 import numpy as np
 from scipy import optimize 
 
-class ROHSABS(object):
+class lbfgs_abs(object):
     def __init__(self, Tb, tau, rms_Tb=None, rms_tau=None, hdr=None):
         """
         Joint fit emission and absoption spectra for GASKAP collaboration
@@ -16,7 +16,7 @@ class ROHSABS(object):
         Returns:
         --------
         """    
-        super(ROHSABS, self).__init__()
+        super(lbfgs_abs, self).__init__()
         self.Tb = Tb
         self.tau = tau
         self.rms_Tb = rms_Tb if rms_Tb is not None else 1.
@@ -257,7 +257,7 @@ class ROHSABS(object):
 
 
 if __name__ == '__main__':    
-    print("ROHSABS module")
-    core = ROHSABS(np.zeros(30), np.zeros(30))
+    print("lbfgs_abs module")
+    core = lbfgs_abs(np.zeros(30), np.zeros(30))
     
 
